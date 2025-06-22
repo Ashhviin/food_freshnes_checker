@@ -28,7 +28,7 @@ model = load_model()
 
 # Title
 st.title("🥗 Food Freshness Classifier")
-st.markdown("Upload an image of a vegetable or fruit, and the model will classify it as **Fresh**, **Stale**, or **Rotten**.")
+st.markdown("Upload an image of a fruit or vegetable to classify it as **Fresh**, **Stale**, or **Rotten**.")
 
 # Image uploader
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -48,12 +48,6 @@ if uploaded_file is not None:
     predicted_class = class_names[np.argmax(prediction)]
     confidence = np.max(prediction) * 100
 
-    # Show result
+    # Display results
     st.success(f"**Prediction:** {predicted_class}")
     st.info(f"**Confidence:** {confidence:.2f}%")
-
-
-    elif label == 'stale':
-        st.warning("⚠️ Consider consuming soon or using in cooking.")
-    else:
-        st.error("❌ Spoiled – please compost or discard.")
