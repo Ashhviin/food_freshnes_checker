@@ -50,7 +50,8 @@ if uploaded_file is not None:
 
     # Show result
     st.success(f"**Prediction:** {predicted_class}")
-    st.info(f"**C**
+    st.info(f"**Confidence:** {confidence:.2f}%")
+
 
     elif label == 'stale':
         st.warning("⚠️ Consider consuming soon or using in cooking.")
